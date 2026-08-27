@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Nour</title>
+<meta name="description" content="About me — edit this description">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-page="about">
+
+<svg class="bg-vine" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <path class="vine-path" d="M -50,780 C 150,700 200,850 380,760 C 560,670 520,500 700,460 C 880,420 900,250 1100,180 C 1200,140 1220,90 1300,40" />
+  <circle class="vine-dot" cx="380" cy="760" r="5"/>
+  <circle class="vine-dot" cx="700" cy="460" r="5"/>
+  <circle class="vine-dot" cx="1100" cy="180" r="5"/>
+</svg>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div class="app">
+
+  <header class="sidebar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">Y</span>
+      <span class="brand-text">
+        <strong>Nour Moussa</strong>
+        <small>Web Developer</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link"><span class="nav-index">01</span>Home</a></li>
+        <li><a href="about.html" class="nav-link is-active"><span class="nav-index">02</span>About</a></li>
+        <li><a href="work.html" class="nav-link"><span class="nav-index">03</span>Work</a></li>
+        <li><a href="skills.html" class="nav-link"><span class="nav-index">04</span>Skills</a></li>
+        <li><a href="contact.html" class="nav-link"><span class="nav-index">05</span>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="social-mini">
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <span class="copyright">© <span id="year"></span> Nour</span>
+    </div>
+  </header>
+
+  <main class="stage">
+    <section class="page">
+      <div class="page-inner">
+        <p class="eyebrow reveal d1">02 — Get to know me</p>
+        <h2 class="section-title reveal d2">About Me</h2>
+
+        <div class="about-grid">
+          <div class="about-photo reveal d3">
+            <!-- Put your photo here: replace the link with your own image path -->
+            <img src="https://via.placeholder.com/480x600?text=Your+Photo" alt="Your portrait">
+            <div class="photo-frame"></div>
+          </div>
+
+          <div class="about-text reveal d4">
+            <p>
+               Information Technology Engineer, Class of 2024
+               Passionate about web interface development and user experience.
+            </p>
+           \
+            <ul class="facts">
+              <li><span>Name</span><strong>Nour</strong></li>
+              <li><span>Focus</span><strong>Information Technology Engineering</strong></li>
+              <li><span>Based in</span><strong>Damascus - Syria</strong></li>
+              <li><span>Email</span><strong>nourmoussa525@gmail.com</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
