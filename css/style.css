@@ -253,28 +253,38 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* =========================================================
    الانتقال بين الصفحات (تحميل كامل مع تلاشي)
 ========================================================= */
+/* افتراضياً (بدون جافاسكريبت) كل شي ظاهر عادي بدون حركة —
+   الحركة تُفعَّل فقط إذا نجح جافاسكريبت بالعمل وأضاف class="js-ready" على <html> */
 .app{
+  opacity:1;
+  transform:none;
+}
+html.js-ready .app{
   opacity:0;
   transform:translateY(14px);
   transition:opacity .5s var(--ease), transform .5s var(--ease);
 }
-body.is-loaded .app{
+html.js-ready body.is-loaded .app{
   opacity:1;
   transform:translateY(0);
 }
-body.is-leaving .app{
+html.js-ready body.is-leaving .app{
   opacity:0;
   transform:translateY(-14px);
   transition:opacity .35s var(--ease), transform .35s var(--ease);
 }
 
-/* عناصر تظهر بالتتابع بعد اكتمال تحميل الصفحة */
+/* عناصر تظهر بالتتابع بعد اكتمال تحميل الصفحة (فقط لو جافاسكريبت شغّال) */
 .reveal{
+  opacity:1;
+  transform:none;
+}
+html.js-ready .reveal{
   opacity:0;
   transform:translateY(18px);
   transition:opacity .7s var(--ease), transform .7s var(--ease);
 }
-body.is-loaded .reveal{
+html.js-ready body.is-loaded .reveal{
   opacity:1;
   transform:translateY(0);
 }
@@ -496,12 +506,15 @@ body.is-loaded .reveal{
 .skill-bar i{
   display:block;
   height:100%;
-  width:0;
+  width:var(--v);
   background:linear-gradient(90deg, var(--sage), var(--blue));
   border-radius:100px;
+}
+html.js-ready .skill-bar i{
+  width:0;
   transition:width 1.1s var(--ease) .3s;
 }
-body.is-loaded .skill-bar i{ width:var(--v); }
+html.js-ready body.is-loaded .skill-bar i{ width:var(--v); }
 
 .skill-chips{ display:flex; flex-wrap:wrap; gap:.6rem; }
 .skill-chips span{
@@ -581,6 +594,8 @@ body.is-loaded .skill-bar i{ width:var(--v); }
     width:100%;
     height:auto;
     position:fixed;
+    top:0;
+    bottom:auto;
     padding:1.2rem 1.5rem;
     flex-direction:row;
     align-items:center;
